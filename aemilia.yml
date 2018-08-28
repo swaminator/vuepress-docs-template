@@ -1,0 +1,20 @@
+version: 0.1
+env:
+    variables: []
+build:
+    phases:
+        pre_build:
+            commands:
+                - 'yarn install'
+        build:
+            commands: ['vuepress build docs']
+        post_build:
+            commands: []
+    artifacts:
+        files:
+            - '**/*'
+        discardPaths: true
+        baseDirectory: /
+    cache:
+        paths:
+            - node_modules
